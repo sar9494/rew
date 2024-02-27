@@ -88,4 +88,4 @@ sum+=myList.get(i);
 }
 System.out.println("Нийлбэр:"+sum);
 }
-}
+} //1222
