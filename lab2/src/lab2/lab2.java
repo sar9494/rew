@@ -1,6 +1,5 @@
 package lab2;
 
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -43,12 +42,12 @@ case 6:
 Sum(myList);
 break;
 case 7:
-System.exit(0); //23744t3ojpe
+System.exit(0); 
 System.out.println("wdni");
 break;
 }
 }
-}//3:3
+}
 
 public static void addElement(List<Integer> myList,Scanner sc)
 {
