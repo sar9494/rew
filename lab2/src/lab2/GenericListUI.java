@@ -34,35 +34,35 @@ package lab2;
 	        });
 
 	        displayButton.addActionListener(new ActionListener() {
-	            @Override
+	            
 	            public void actionPerformed(ActionEvent e) {
 	                displayElements();
 	            }
 	        });
 
 	        removeButton.addActionListener(new ActionListener() {
-	            @Override
+	            
 	            public void actionPerformed(ActionEvent e) {
 	                removeElement();
 	            }
 	        });
 
 	        sortButton.addActionListener(new ActionListener() {
-	            @Override
+	            
 	            public void actionPerformed(ActionEvent e) {
 	                sortElements();
 	            }
 	        });
 
 	        checkEmptyButton.addActionListener(new ActionListener() {
-	            @Override
+	            
 	            public void actionPerformed(ActionEvent e) {
 	                checkEmpty();
 	            }
 	        });
 
 	        sumButton.addActionListener(new ActionListener() {
-	            @Override
+	            
 	            public void actionPerformed(ActionEvent e) {
 	                getSum();
 	            }
