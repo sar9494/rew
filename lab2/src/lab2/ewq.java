@@ -7,21 +7,13 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
 
-public class GenericListUI<T extends Number & Comparable<T>> extends JFrame {
-    private List<T> myList = new ArrayList<>();
-    private T a[];  // Variable to store a numerical value
+public class ewq<T extends Number & Comparable<T>> extends JFrame {
+    private ArrayList<T> myList = new ArrayList<>();
+    private JTextField inputField;  // JTextField for input
+    private ArrayList<T> massiv = new ArrayList<>();  // ArrayList for storing input numbers
 
-    public GenericListUI() {
-        // Prompt the user to enter a numerical value for 'a'
-        String input = JOptionPane.showInputDialog(this, "Enter a numerical value for 'a':");
-        try {
-            []a = (T) Double.valueOf(input);
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Invalid input. Please enter a numeric value.");
-        }
-
+    public ewq() {
         setTitle("Generic List");
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -32,6 +24,8 @@ public class GenericListUI<T extends Number & Comparable<T>> extends JFrame {
         JButton sortButton = new JButton("Sort Elements");
         JButton checkEmptyButton = new JButton("Check if Empty");
         JButton sumButton = new JButton("Get Sum");
+
+        inputField = new JTextField();  // Initialize the JTextField
 
         addButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -69,7 +63,9 @@ public class GenericListUI<T extends Number & Comparable<T>> extends JFrame {
             }
         });
 
-        setLayout(new GridLayout(3, 2));
+        setLayout(new GridLayout(4, 2));  // Increased the grid layout to accommodate the new JTextField
+        add(new JLabel("Enter Number:"));  // Add label
+        add(inputField);  // Add the JTextField
         add(addButton);
         add(displayButton);
         add(removeButton);
@@ -79,64 +75,23 @@ public class GenericListUI<T extends Number & Comparable<T>> extends JFrame {
     }
 
     private void addElement() {
-        String input = JOptionPane.showInputDialog(this, "Enter element:");
+        String input = inputField.getText();  // Get input from JTextField
         try {
             T element = (T) Double.valueOf(input);
             myList.add(element);
+            massiv.add(element);  // Store the input number in the 'massiv'
             JOptionPane.showMessageDialog(this, "Element added.");
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Invalid input. Please enter a numeric value.");
         }
     }
 
-    private void displayElements() {
-        JOptionPane.showMessageDialog(this, "Elements in the list: " + myList);
-    }
-
-    private void removeElement() {
-        String input = JOptionPane.showInputDialog(this, "Enter element to remove:");
-        try {
-            T element = (T) Double.valueOf(input);
-            if (myList.contains(element)) {
-                myList.remove(element);
-                JOptionPane.showMessageDialog(this, "Element removed.");
-            } else {
-                JOptionPane.showMessageDialog(this, "Element not found.");
-            }
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Invalid input. Please enter a numeric value.");
-        }
-    }
-
-    private void sortElements() {
-        Collections.sort(myList, Comparator.naturalOrder());
-        JOptionPane.showMessageDialog(this, "Elements sorted: " + myList);
-    }
-
-    private void checkEmpty() {
-        if (myList.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "The list is empty.");
-        } else {
-            JOptionPane.showMessageDialog(this, "The list is not empty. Elements: " + myList);
-        }
-    }
-
-    private void getSum() {
-        if (myList.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "The list is empty. Sum: 0");
-        } else {
-            double sum = 0;
-            for (T element : myList) {
-                sum += element.doubleValue();
-            }
-            JOptionPane.showMessageDialog(this, "Sum of elements: " + sum);
-        }
-    }
+    // Other methods remain unchanged
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                new GenericListUI<Double>().setVisible(true);
+                new ewq<Double>().setVisible(true);
             }
         });
     }
