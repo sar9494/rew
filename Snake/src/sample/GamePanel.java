@@ -27,7 +27,7 @@ public class GamePanel extends JPanel implements ActionListener{
         this.setPreferredSize(new Dimension(SCREEN_WIDTH,SCREEN_HEIGHT));
         this.setBackground(Color.black);
         this.setFocusable(true);
-        this.addKeyListener(new MyKeyAdapter());
+        this.addMouseMotionListener((MouseMotionListener) new mouseListener());
         startGame();
     }
     public void startGame() {
@@ -176,5 +176,35 @@ public class GamePanel extends JPanel implements ActionListener{
                     break;
             }
         }
-    }//oiewafohh
+    }
+    public class mouseListener implements MouseListener{
+		@Override
+		public void mouseClicked(MouseEvent e) {
+		}
+
+		@Override
+		public void mousePressed(MouseEvent e) {
+			 
+			// TODO Auto-generated method stub
+			if(SwingUtilities.isLeftMouseButton(e)) {
+				if(direction != 'R') {
+                    direction = 'L';
+                }
+			 }
+			 else if (SwingUtilities.isRightMouseButton(e)) {
+				 if(direction != 'L') {
+                     direction = 'R';
+                 }
+				 }
+		}
+		@Override
+		public void mouseEntered(MouseEvent e) {
+		}
+		@Override
+		public void mouseExited(MouseEvent e) {
+		}
+		@Override
+		public void mouseReleased(MouseEvent e) {
+		}
+    	}
 }
