@@ -2,8 +2,6 @@ package bd2;
 
 public class bodolt {
 	
-	int ajiludur1=6;
-	int ajilUdur2=5;
 	int hicheeltsag1_3=4;
 	int hicheelTsag4_8=34;
 	int hicheelTsag9_10=6;
