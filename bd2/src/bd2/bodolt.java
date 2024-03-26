@@ -2,14 +2,14 @@ package bd2;
 
 public class bodolt {
 	
-	int hicheeltsag1_3=4;
+	int hicheeltsag1_3=24;
 	int hicheelTsag4_8=34;
-	int hicheelTsag9_10=6;
+	int hicheelTsag9_10=36;
 	int dundMin=45;   //dund sur 1tsag=45min 1978
 	int deedTsag=3;
 	int deedMin=90;  //deed sur 1tsag=90min 
-	int subTime1_5=4;
-	int subTime6_12=6;
+	int subTime1_5=20;
+	int subTime6_12=30;
 	
 public int jil(int f, int l) {
 	boolean old;
@@ -19,9 +19,6 @@ public int jil(int f, int l) {
 	}
 	else if((f>=2006&&l<=2022)) {
 		young=true;
-	}
-	else {
-		old=young=false;
 	}
 	
 	return 0;
