@@ -47,13 +47,34 @@ public int lSunday(int a) {
 		}
 	return 31-k;
 }
-
 public int fMonday(int a) {
-	int jil=a-1978, b=jil;
-	int k = 0,l=0;
+	int day=5;
+	int k=a-1976;
 	int on=1978;
-		
-	return 1+k;
+	while(k-2>=0) {
+		if(on%4==0) {
+			if(day==2) {
+				day=7;
+			}
+			else if(day==1) {
+				day=6;
+			}
+			else {
+				day-=2;
+			}
+		}
+		else {
+			if(day==1) {
+				day=7;
+			}
+			else {
+				day-=1;
+			}
+		}
+		on+=1;
+		k-=1;
+	}
+	return day;
 }
 public void weekday(int a, int b) {
 	//hicheellej baigaa 7 honogiin toog bodoh
